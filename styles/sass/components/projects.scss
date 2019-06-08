@@ -1,0 +1,117 @@
+#projects{
+    box-sizing: border-box;
+    min-height: 100vh;
+    width: 100vw;
+    padding: 20px 30px;
+}
+.projects__header{
+    text-align: center;
+    font-family: Helvetica, Arial;
+    letter-spacing: 2px;
+    color: rgb(255, 255, 255);
+    position: relative;
+    z-index: 3;
+    margin: 0 auto;
+    margin-top: -40px;
+    margin-bottom: 50px;
+    background: rgba(80, 95, 136, 0.925);
+    padding: 10px 20px;
+    width: fit-content;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+.projects__container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    // background-color: red;
+    // overflow: hidden;
+}
+.project__wrapper{
+    min-width: 300px;
+    max-width: 1000px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    // background-color: pink;
+    padding: 20px 0;
+
+    &:nth-of-type(2) {
+        flex-direction: row-reverse;
+        .project__img-wrapper {
+            @media all and (min-width: 720px) {
+                margin-left: 0;
+                margin-right: 40px;
+            }
+        }
+    }
+}
+.project__text-section{
+    width: 45%;
+    min-width: 300px;
+    margin-bottom: 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.project__title{
+    position: relative;
+    @extend %font;
+    padding-left: 10px;
+    .project__num {
+        color: rgba(0, 0, 0, 0.080);
+        font-size: 85px;
+        position: absolute;
+        top: -40px;
+        left: -25px;
+    }
+}
+.project__discreption{
+    @extend %font;
+}
+.project__botton {
+    @extend %font;
+    a {
+        text-decoration: none;
+        padding: 7px 20px;
+        background-color: #7194ac;
+        color: white;
+        border-radius: 5px;
+        font-weight: 600;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 
+        0 3px 1px -2px rgba(0,0,0,0.12), 
+        0 1px 5px 0 rgba(0,0,0,0.2);
+
+        &.private {
+            background-color: grey;
+            cursor: text;
+        }
+    }
+}
+.project__img-wrapper{
+    max-width: 320px;
+    height: 220px;
+    min-width: 300px;
+    border-radius: 3px;
+    // background-color: grey;
+    margin: 0px 0px;   
+    
+    @media all and (min-width: 720px) {
+        max-width: 416px;
+        height: 286px;
+        margin-left: 40px;
+    }
+}
+.project__img {
+    max-width: 100%;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.1),
+    0 1px 10px 0 rgba(0,0,0,0.12),
+    0 2px 4px -1px rgba(0,0,0,0.3);
+    border-radius: 3px;
+
+}
