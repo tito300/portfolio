@@ -8,7 +8,7 @@
     overflow: hidden;
 
     background-color: rgb(242, 248, 255);
-    background: linear-gradient(rgb(255, 255, 255) 30%, rgb(222, 231, 255));
+    background: linear-gradient(rgb(255, 255, 255) 30%, #d0dbf9);
 
     // Top
     .header__top{
@@ -22,7 +22,7 @@
         }
     }
     .header__title{
-        color: #7194ac;
+        color: #62839a;
         margin: 0;
         margin-bottom: -4px;
         font-size: 30px;
@@ -47,7 +47,7 @@
         text-align: center;
         left: -42px;
         .header__menu__link {
-            background-color: #7194ac;
+            background-color: #62839a;
             z-index: 5;
             position: relative;
             padding: 15px 35px 15px 10px;
@@ -64,10 +64,10 @@
                 top: 0px;
                 right: -74px;
                 z-index: -2;
-                border-top: 25px solid #7194ac;
+                border-top: 25px solid #62839a;
                 border-bottom: 23px solid transparent;
                 border-right: 43px solid transparent;
-                border-left: 40px solid #7194ac;
+                border-left: 40px solid #62839a;
                 border-bottom-left-radius: 7px;
             }
         }
@@ -78,7 +78,7 @@
         left: 70px;
         top: 60px;
         .header__menu__link {
-            background-color: #7194ac;
+            background-color: #62839a;
             top: 0px;
             left: 70px;
             z-index: 5;
@@ -96,7 +96,7 @@
                 border-top: 23px solid transparent;
                 border-bottom: 24px solid transparent;
                 border-left: 10px solid transparent;
-                border-right: 40px solid #7194ac;
+                border-right: 40px solid #62839a;
             }
             &::after {
                 content: "";
@@ -119,7 +119,7 @@
         top: 170px;
         left: -40px;
         .header__menu__link {
-            background-color: #7194ac;
+            background-color: #62839a;
             z-index: 5;
             position: relative;
             padding: 15px 55px 15px 10px;
@@ -135,9 +135,9 @@
                 right: -74px;
                 z-index: -2;
                 border-top: 23px solid transparent;
-                border-bottom: 24px solid #7194ac;
+                border-bottom: 24px solid #62839a;
                 border-right: 41px solid transparent;
-                border-left: 40px solid #7194ac;
+                border-left: 40px solid #62839a;
                 border-top-left-radius: 7px;
             }
             &::after {
@@ -272,7 +272,7 @@
             // display: none;
         }
         .header__menu__link {
-            background-color: #7194ac;
+            background-color: #62839a;
             z-index: 5;
             position: relative;
             font-size: 18px;
@@ -299,9 +299,9 @@
                     top: 0px;
                     left: -93px;
                     z-index: -2;
-                    border-bottom: 25px solid #7194ac;
+                    border-bottom: 25px solid #62839a;
                     border-top: 25px solid transparent;
-                    border-right: 52px solid #7194ac;
+                    border-right: 52px solid #62839a;
                     border-left: 52px solid transparent;
                     border-top-right-radius: 7px;
                 }
@@ -327,9 +327,9 @@
                     background-color: transparent;
                     transform: rotate(0);
                     box-shadow: none;
-                    border-bottom: 25px solid #7194ac;
+                    border-bottom: 25px solid #62839a;
                     border-top: 25px solid transparent;
-                    border-right: 52px solid #7194ac;
+                    border-right: 52px solid #62839a;
                     border-left: 52px solid transparent;
                     border-top-right-radius: 7px;
 
@@ -350,9 +350,9 @@
                     top: 0px;
                     left: -93px;
                     z-index: -2;
-                    border-bottom: 25px solid #7194ac;
+                    border-bottom: 25px solid #62839a;
                     border-top: 25px solid transparent;
-                    border-right: 52px solid #7194ac;
+                    border-right: 52px solid #62839a;
                     border-left: 52px solid transparent;
                     border-top-right-radius: 7px;
                 }
