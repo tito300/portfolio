@@ -5,16 +5,17 @@ import constants from './constants';
  * @returns {Object} 
  */
 export default function utils() {
-    const viewHeight = window.innerHeight;
     /**
-     * takes an element and checks of its in view
-     * @param {Object} element
-     * @returns {Boolean}
-     */
-    function inView(element, diff = constants.IN_VIEW) {
-        return element.getBoundingClientRect().top - viewHeight < diff ? true
-            : false;
-    }
+         * takes an element and checks of its in view
+         * @param {Object} element
+         * @returns {Boolean}
+         */
+        function inView(element, inViewDistance = constants.IN_VIEW) {
+            const viewHeight = window.innerHeight;
+            console.log(viewHeight - element.getBoundingClientRect().top);
+            return viewHeight - element.getBoundingClientRect().top > inViewDistance ? true
+                : false;
+        }
     /**
      * returns the href target stripped
      * @param {Event} e takes an event object

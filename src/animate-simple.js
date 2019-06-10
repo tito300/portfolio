@@ -1,70 +1,77 @@
 import utils from './utils';
 import Element from './Element';
-const { inView, getHrefTarget } = utils();
+import constants from './constants';
+const { getHrefTarget, inView } = utils();
 
-const animateSimple = {
+const animateSimple = (function() {
+    let inViewDistance = constants.IN_VIEW;
+    const animateSimple = {}
 
-    smoothScroll: function (e) {
+    animateSimple.smoothScroll = function (e) {
         e.preventDefault();
         const scrollToTarget = getHrefTarget(e);
-         
-    
+            
+
         const targetElement = document.getElementById(scrollToTarget);
         targetElement.scrollIntoView({ behavior: "smooth", block: 'start' })
     },
 
+    animateSimple.configure = function(options) {
+        if(!options) return;
+        if(!(options instanceof Object)) throw 'argument must be of type Object'
+
+        inViewDistance = options.inViewDistance || constants.IN_VIEW;
+    }
+
     // TODO: add support for objects
-    animate: function(options) {
+    animateSimple.animate = function(options) {
         if(!options instanceof Array) throw 'options must be of type array';
         const elementsToAnimate = options;
-    
-        const { handleScrollAnimation, smoothScrollToAnchor, initializeAnimationPositions } = eventHandlers();
-    
+
+        const { handleScrollAnimation, initializeAnimationPositions } = eventHandlers();
+
         window.onload = initializeAnimationPositions;
         window.onscroll = handleScrollAnimation;
-    
+
         /**
          * @returns {Object} event handler functions 
          */
         function eventHandlers() {
             const { getNewElement } = elements();
             let elementInstances = [];
-            /**
-             * @returns {void}
-             */
+
             function handleScrollAnimation(e) {
                 (function animateInstances() {
                     elementInstances.forEach(element => {
-                        if(inView(element.element)) {
+                        debugger;
+                        if(inView(element.element, inViewDistance)) {
                             element.animate();
                         } else {
-                            element.initial();
+                            element.initializePosition();
                         }
                     })
                 })()
             }
-    
+
             function initializeAnimationPositions() {
                 elementsToAnimate.forEach(elementToAnimate => {
                     const elementSelector = Array.isArray(elementToAnimate) ?  elementToAnimate[0]: elementToAnimate;
                     const animationDirection = Array.isArray(elementToAnimate) && elementToAnimate[1] ? elementToAnimate[1] : '';
+                    const options = elementToAnimate[2] || { speed: null, offset: null, inViewDistance };
                     const elements = getNewElement(elementSelector);
-    
+
                     if(!elements.forEach) {
-                        let element = new Element(elementToAnimate, animationDirection);
-                        elementInstances = [element];
+                        let element = new Element(elementToAnimate, animationDirection, options);
+                        elementInstances = [...elementInstances, element];
                     } else {
                         elements.forEach(each => {
-                            let element = new Element(each, animationDirection)
+                            let element = new Element(each, animationDirection, options)
                             elementInstances = [...elementInstances, element];
                         });
                     }
-                })
-    
-                console.log(elementInstances);
-                
+                })            
             }
-    
+
             function smoothScrollToAnchor(e) {
                 e.preventDefault();
                 const scrollToTarget = getHrefTarget(e);
@@ -79,12 +86,8 @@ const animateSimple = {
                 initializeAnimationPositions
             }
         }
-    
+
         function elements() {    
-            /**
-             * @param {String} name element selector
-             * @returns {Element | Element[]} return nodelist if more than one element found
-             */
             const getNewElement = (name) => {
                 const elements = document.querySelectorAll(name);
                 if (elements.length === 1) return elements[0];
@@ -94,8 +97,9 @@ const animateSimple = {
                 getNewElement,
             }
         }
-    
+
     }
-}
+    return animateSimple;
+})()
 
 export default animateSimple;

@@ -3,9 +3,11 @@ import Element from './Element';
 import animateSimple from './animate-simple';
 
 main();
+animateSimple.configure({
+    inViewDistance: 150,
+})
 
-
-const elementsToAnimate = [['.project__img', '<-->']];
+const elementsToAnimate = [['.project__img', '<-->', { offset: 150, time: 0.3 }]];
 animateSimple.animate(elementsToAnimate);
 /**
  * main function called when module is called
@@ -14,7 +16,7 @@ animateSimple.animate(elementsToAnimate);
  */
 function main() {
     const { projectMenuLinks } = elements();
-    const { handleScrollAnimation, smoothScrollToAnchor, initializeAnimationPositions } = eventHandlers();
+    const { smoothScrollToAnchor } = eventHandlers();
 
     // window.onload = initializeAnimationPositions;
     // window.onscroll = handleScrollAnimation;

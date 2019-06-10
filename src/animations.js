@@ -19,7 +19,7 @@ const animations = {
             opacity: '1'
         },
         initial: {
-            transform: () => `translateX(${getRandomBool() && '-'}${constants.MOVEMENT_DISTANCE}px)`,
+            transform: (initialDistance) => `translateX(${getRandomBool() && '-'}${initialDistance || constants.MOVEMENT_DISTANCE}px)`,
             opacity: '0',
         }
     }

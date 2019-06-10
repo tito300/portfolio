@@ -5,27 +5,28 @@ import utils from './utils';
 let { inView } = utils();
 
 export default class Element {
-    constructor(elementToAnimate, direction) {
+    constructor(elementToAnimate, direction, options) {
         this.constansts = constants; 
         this.animation = this._getAnimationObj(direction);
         this.element = elementToAnimate;
         this.originalStyle = {...elementToAnimate.style};
+        this.offset = options.offset || null;
+        this.time = options.time || null;
+
+        this.element.style.transition = `${options.time || constants.TRANSITION_TIME}s linear`;
         this.initializePosition();
+        if(inView(this.element, options.inViewDistance)) {
+            this.animate();
+        }
     }
 
     initializePosition() {
-        this.element.style.transition = this.animation.apply.transition;
-
         const keys = Object.keys(this.animation.initial);
         keys.forEach(key => {
-            let value = this.animation.initial[key] instanceof Function ? this.animation.initial[key]() 
+            let value = this.animation.initial[key] instanceof Function ? this.animation.initial[key](this.offset) 
                 : this.animation.initial[key];
-            this.element.style.transition = `${constants.TRANSITION_TIME}s linear`,    
             this.element.style[key] = value;
         })
-        if(inView(this.element)) {
-            this.animate();
-        }
     }
 
     animate() {
@@ -34,16 +35,6 @@ export default class Element {
             let value;
         value = this.animation.apply[key] instanceof Function ? this.animation.apply[key](this.originalStyle[key]) 
             : this.animation.apply[key];   
-        this.element.style[key] = value;
-        })
-    }
-
-    initial() {
-        const keys = Object.keys(this.animation.initial);
-        keys.forEach(key => {
-            let value;
-        value = this.animation.initial[key] instanceof Function ? this.animation.initial[key](this.originalStyle[key]) 
-            : this.animation.initial[key];   
         this.element.style[key] = value;
         })
     }
