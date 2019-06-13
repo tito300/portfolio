@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "scroll-dom-animation": "^1.0.7"
+    "scroll-dom-animation": "^1.0.9"
   },
   "devDependencies": {
     "sass": "^1.20.3",
