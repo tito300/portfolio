@@ -406,28 +406,26 @@ template {
   left: -42px;
 }
 #header .header__menu__sect-1 .header__menu__link {
-  background-color: #62839a;
-  z-index: 5;
   position: relative;
   padding: 15px 35px 15px 10px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 10px;
+  z-index: 500;
+  color: white;
   cursor: pointer;
 }
 #header .header__menu__sect-1 .header__menu__link::after {
   content: "";
+  background-image: url(/public/imgs/menubar-down.png);
+  width: 210px;
+  height: 101%;
+  top: 0;
+  left: 0;
   position: absolute;
-  height: 0;
-  width: 0;
-  top: 0px;
-  right: -74px;
-  z-index: -2;
-  border-top: 25px solid #62839a;
-  border-bottom: 23px solid transparent;
-  border-right: 43px solid transparent;
-  border-left: 40px solid #62839a;
-  border-bottom-left-radius: 7px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -5;
 }
 #header .header__menu__sect-2 {
   position: relative;
@@ -436,26 +434,27 @@ template {
   top: 60px;
 }
 #header .header__menu__sect-2 .header__menu__link {
-  background-color: #62839a;
   top: 0px;
   left: 70px;
   z-index: 5;
   position: absolute;
   padding: 15px 20px 15px 80px;
   border-radius: 5px;
+  box-shadow: none;
+  z-index: 500;
 }
 #header .header__menu__sect-2 .header__menu__link::before {
   content: "";
-  position: absolute;
-  height: 0;
-  width: 0;
+  background-image: url(/public/imgs/menubar-mid.png);
+  width: 195px;
+  height: 101%;
   top: 0px;
-  left: -48px;
-  z-index: -2;
-  border-top: 23px solid transparent;
-  border-bottom: 24px solid transparent;
-  border-left: 10px solid transparent;
-  border-right: 40px solid #62839a;
+  left: -37px;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  box-shadow: 5px 0px 5px -5px rgba(0, 0, 0, 0.301);
+  z-index: -5;
 }
 #header .header__menu__sect-2 .header__menu__link::after {
   content: "";
@@ -476,27 +475,26 @@ template {
   left: -40px;
 }
 #header .header__menu__sect-3 .header__menu__link {
-  background-color: #62839a;
   z-index: 5;
   position: relative;
   padding: 15px 55px 15px 10px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-top-right-radius: 10px;
+  z-index: 500;
+  cursor: pointer;
 }
 #header .header__menu__sect-3 .header__menu__link::before {
   content: "";
+  background-image: url(/public/imgs/menubar.png);
+  width: 210px;
+  height: 101%;
+  top: 0;
+  left: 0;
   position: absolute;
-  height: 0;
-  width: 0;
-  top: 0px;
-  right: -74px;
-  z-index: -2;
-  border-top: 23px solid transparent;
-  border-bottom: 24px solid #62839a;
-  border-right: 41px solid transparent;
-  border-left: 40px solid #62839a;
-  border-top-left-radius: 7px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -5;
 }
 #header .header__menu__sect-3 .header__menu__link::after {
   content: "";
@@ -962,6 +960,9 @@ template {
 #resume {
   padding-top: 100px;
   margin-bottom: 200px;
+}
+#resume .card-link {
+  font-size: 1.5rem;
 }
 
 #connect path {
