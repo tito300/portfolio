@@ -17,6 +17,10 @@ html {
   /* 2 */
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 article {
   margin-bottom: 80px;
 }

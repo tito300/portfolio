@@ -19,6 +19,8 @@
     -webkit-text-size-adjust: 100%; /* 2 */
   }
 
+  html,body{overflow-x: hidden;}
+
   article {
     margin-bottom: 80px;
   }
