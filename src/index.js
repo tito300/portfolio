@@ -1,5 +1,4 @@
 
-import Element from './Element';
 import scrollDom from 'scroll-dom-animation';
 // import scrollDom from '../../../packages/scroll-dom-animation';
 
