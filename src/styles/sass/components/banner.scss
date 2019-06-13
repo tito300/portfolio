@@ -58,7 +58,7 @@
 
             &::after {
                 content: '';
-                background-image: url(/public/imgs/menubar-down.png);
+                background-image: url(/portfolio/public/imgs/menubar-down.png);
                 width: 210px;
                 height: 101%;
                 top: 0;
@@ -88,7 +88,7 @@
             z-index: 500;
             &::before {
                 content: '';
-                background-image: url(/public/imgs/menubar-mid.png);
+                background-image: url(/portfolio/public/imgs/menubar-mid.png);
                 width: 195px;
                 height: 101%;
                 top: 0px;
@@ -131,7 +131,7 @@
             cursor: pointer;
             &::before {
                 content: '';
-                background-image: url(/public/imgs/menubar.png);
+                background-image: url(/portfolio/public/imgs/menubar.png);
                 width: 210px;
                 height: 101%;
                 top: 0;
@@ -162,7 +162,7 @@
         text-decoration: none;
         color: white;
         font-family: Arial, Helvetica, sans-serif;
-        box-shadow: -5px 5px 8px -5px rgba(0, 0, 0, 0.301);
+        // box-shadow: -5px 5px 8px -5px rgba(0, 0, 0, 0.301);
     }
     .shapes {
         span {
