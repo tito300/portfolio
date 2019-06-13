@@ -1,0 +1,14 @@
+#about {
+    @extend %font;
+    background-color: #616267;
+    display: flex;
+    padding: 70px 0;
+    .card {
+        background-color: #efefef;
+        border: none;
+    }
+    .card-text {
+        font-size: 1.1rem;
+        color: rgb(129, 129, 129) !important;
+    }
+}

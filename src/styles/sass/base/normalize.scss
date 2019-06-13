@@ -9,13 +9,25 @@
  */
 
  * {
-     color: rgb(37, 37, 37);
+     color: rgb(59, 59, 59);
+     font-family: Helvetica, Arial, Sans-serif !important;
     //  box-sizing: border-box;
  }
 
  html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
+  }
+
+  article {
+    margin-bottom: 80px;
+  }
+
+  code {
+    background-color: rgba(203, 197, 206, 0.322);
+    padding: 2px;
+    color: grey;
+    letter-spacing: 1px;
   }
   
   /* Sections

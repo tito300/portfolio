@@ -9,11 +9,10 @@ export default class Element {
         this.constansts = constants; 
         this.animation = this._getAnimationObj(direction);
         this.element = elementToAnimate;
-        this.originalStyle = {...elementToAnimate.style};
-        this.offset = options.offset || null;
-        this.time = options.time || null;
-
+        this.originalStyle = {...getComputedStyle(elementToAnimate)};
+        this.clientProvidedInitials = options || {};
         this.element.style.transition = `${options.time || constants.TRANSITION_TIME}s linear`;
+
         this.initializePosition();
         if(inView(this.element, options.inViewDistance)) {
             this.animate();
@@ -23,7 +22,7 @@ export default class Element {
     initializePosition() {
         const keys = Object.keys(this.animation.initial);
         keys.forEach(key => {
-            let value = this.animation.initial[key] instanceof Function ? this.animation.initial[key](this.offset) 
+            let value = this.animation.initial[key] instanceof Function ? this.animation.initial[key](this.clientProvidedInitials, this.originalStyle) 
                 : this.animation.initial[key];
             this.element.style[key] = value;
         })
@@ -33,9 +32,9 @@ export default class Element {
         const keys = Object.keys(this.animation.apply);
         keys.forEach(key => {
             let value;
-        value = this.animation.apply[key] instanceof Function ? this.animation.apply[key](this.originalStyle[key]) 
-            : this.animation.apply[key];   
-        this.element.style[key] = value;
+            value = this.animation.apply[key] instanceof Function ? this.animation.apply[key](this.originalStyle[key]) 
+                : this.animation.apply[key];   
+            this.element.style[key] = value;
         })
     }
 

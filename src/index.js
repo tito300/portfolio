@@ -1,14 +1,27 @@
 
 import Element from './Element';
-import animateSimple from './animate-simple';
+import scrollDom from 'scroll-dom-animation';
+// import scrollDom from '../../../packages/scroll-dom-animation';
 
 main();
-animateSimple.configure({
+scrollDom.configure({
     inViewDistance: 150,
 })
 
-const elementsToAnimate = [['.project__img', '<-->', { offset: 150, time: 0.3 }]];
-animateSimple.animate(elementsToAnimate);
+const elementsToAnimate = [
+    ['.project__img', '-><-', { time: 0.4 }], 
+    ['.project__num', '-><-', { time: 0.5 }],
+    ['.projects__header', '^'],
+    ['#about .card', 'o.', {time: 0.4}],
+    ['#about .card-title', '.o', {scaleFactor: 0.5}],
+    ['#about .card-text', '*', {time: 0.8}],
+    ['#resume .card', '^'],
+    ['#resume .card-link', '->', { time: 0.7}],
+    ['#connect .btn', '^v', {time: 0.5, offset: 20},], 
+];
+// const elementsToAnimate = ['.project__img', '^']
+scrollDom.animate(elementsToAnimate);
+
 /**
  * main function called when module is called
  * @public
@@ -16,11 +29,8 @@ animateSimple.animate(elementsToAnimate);
  */
 function main() {
     const { projectMenuLinks } = elements();
-    const { smoothScrollToAnchor } = eventHandlers();
 
-    // window.onload = initializeAnimationPositions;
-    // window.onscroll = handleScrollAnimation;
-    projectMenuLinks.forEach(each => each.addEventListener('click', smoothScrollToAnchor));
+    projectMenuLinks.forEach(each => each.addEventListener('click', scrollDom.smoothScroll));
 }
 
 /**
@@ -55,16 +65,8 @@ function elements() {
  * @returns {Object} event handler functions 
  */
 function eventHandlers() {
+    const {} = elements();
 
-    function smoothScrollToAnchor(e) {
-        e.preventDefault();
-        const scrollToTarget = getHrefTarget(e);
-         
-    
-        const targetElement = document.getElementById(scrollToTarget);
-        targetElement.scrollIntoView({ behavior: "smooth", block: 'start' })
-    }
     return {
-        smoothScrollToAnchor,
     }
 }

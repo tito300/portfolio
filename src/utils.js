@@ -12,7 +12,6 @@ export default function utils() {
          */
         function inView(element, inViewDistance = constants.IN_VIEW) {
             const viewHeight = window.innerHeight;
-            console.log(viewHeight - element.getBoundingClientRect().top);
             return viewHeight - element.getBoundingClientRect().top > inViewDistance ? true
                 : false;
         }

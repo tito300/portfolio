@@ -24,9 +24,9 @@ const animateSimple = (function() {
     }
 
     // TODO: add support for objects
-    animateSimple.animate = function(options) {
-        if(!options instanceof Array) throw 'options must be of type array';
-        const elementsToAnimate = options;
+    animateSimple.animate = function(elementSelectors) {
+        if(!elementSelectors instanceof Array) throw 'options must be of type array';
+        const elementsToAnimate = elementSelectors;
 
         const { handleScrollAnimation, initializeAnimationPositions } = eventHandlers();
 
@@ -43,7 +43,6 @@ const animateSimple = (function() {
             function handleScrollAnimation(e) {
                 (function animateInstances() {
                     elementInstances.forEach(element => {
-                        debugger;
                         if(inView(element.element, inViewDistance)) {
                             element.animate();
                         } else {
@@ -55,16 +54,17 @@ const animateSimple = (function() {
 
             function initializeAnimationPositions() {
                 elementsToAnimate.forEach(elementToAnimate => {
+                    const elementIndex = elementToAnimate[2].elementIndex || false;
                     const elementSelector = Array.isArray(elementToAnimate) ?  elementToAnimate[0]: elementToAnimate;
                     const animationDirection = Array.isArray(elementToAnimate) && elementToAnimate[1] ? elementToAnimate[1] : '';
-                    const options = elementToAnimate[2] || { speed: null, offset: null, inViewDistance };
+                    const options = elementToAnimate[2] || { speed: null, offset: null, inViewDistance, elementIndex };
                     const elements = getNewElement(elementSelector);
-
                     if(!elements.forEach) {
-                        let element = new Element(elementToAnimate, animationDirection, options);
+                        let element = new Element(elements, animationDirection, options);
                         elementInstances = [...elementInstances, element];
                     } else {
-                        elements.forEach(each => {
+                        elements.forEach((each, i) => {
+                            if(elementIndex && !elementIndex.includes(i)) return;
                             let element = new Element(each, animationDirection, options)
                             elementInstances = [...elementInstances, element];
                         });

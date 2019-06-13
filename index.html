@@ -7,6 +7,9 @@
     <title>Portfolio | Tarek Demachkies</title>
     <meta name="discription" content="Tarek Demachkie's web development portfolio">
     <link rel="stylesheet" href="public/styles/index.css">
+    <!-- <link rel="stylesheet" href="https://toert.github.io/Isolated-Bootstrap/versions/4.1.0/iso_bootstrap4.1.0min.css"> -->
+    <link rel="stylesheet" href="public/styles/bootstrap.css">
+    <script src="https://kit.fontawesome.com/bc39fc1465.js"></script>
 </head>
 <body>
     <header id="header">
@@ -47,7 +50,10 @@
                     <div class="project__text-section">
                         <div>
                             <h2 class="project__title"><span class="project__num">1</span> MerchProtect.com</h2>
-                            <p class="project__discreption">Lorem ipsum dolor sit amet consectetur adipisicing elit. In eos itaque architecto beatae totam minus repellat sit voluptatibus tenetur at recusandae, optio accusamus, temporibus minima dolorem tempore cupiditate. Molestiae, vel.</p>
+                            <p class="project__discreption">A full stack trademark search and tracking web application optimized for amazon merch sellers. 
+                                This app eliminates the guesswork which can save Amazon accounts from getting terminated as well as saving them time.<br/>
+                                Built on top of Reactjs, Nodejs and SQL.
+                            </p>
                         </div>
                         <div class="project__botton">
                             <a href="https://merchprotect.com" target="_blank">view</a>
@@ -61,8 +67,25 @@
                 <div class="project__wrapper">
                     <div class="project__text-section">
                         <div>
-                            <h2 class="project__title"><span class="project__num">2</span> Tdpicture.com</h2>
-                            <p class="project__discreption">Lorem ipsum dolor sit amet consectetur adipisicing elit. In eos itaque architecto beatae totam minus repellat sit voluptatibus tenetur at recusandae, optio accusamus, temporibus minima dolorem tempore cupiditate. Molestiae, vel.</p>
+                            <h2 class="project__title"><span class="project__num">2</span>scroll-dom-animation</h2>
+                            <p class="project__discreption">A dom animation library that uitilizes a declarative approach to animate existing elements. All animations on this page are
+                                done using this package. To animate any element you only need to add something like this: <code> ['.selector', '->'] </code>  where <code> '->' </code> is the direction.
+                            </p>
+                        </div>
+                        <div class="project__botton">
+                            <a href="https://www.npmjs.com/package/scroll-dom-animation" target="_blank">view</a>
+                            <a href="https://github.com/tito300/scroll-dom-animation" target="_blank">github</a>
+                        </div>
+                    </div>
+                    <div class="project__img-wrapper">
+                        <img src="public/imgs/scrolldom.png" alt="tarek demachkie project" class="project__img">
+                    </div>
+                </div>
+                <div class="project__wrapper">
+                    <div class="project__text-section">
+                        <div>
+                            <h2 class="project__title"><span class="project__num">3</span> Tdpicture.com</h2>
+                            <p class="project__discreption">A full stack photography website built on top of Gatsby; a server side rendering library for Reactjs.</p>
                         </div>
                         <div class="project__botton">
                             <a href="https://tdpicture.com" target="_blank">view</a>
@@ -76,8 +99,10 @@
                 <div class="project__wrapper">
                     <div class="project__text-section">
                         <div>
-                            <h2 class="project__title"><span class="project__num">3</span> Tnk Store</h2>
-                            <p class="project__discreption">Lorem ipsum dolor sit amet consectetur adipisicing elit. In eos itaque architecto beatae totam minus repellat sit voluptatibus tenetur at recusandae, optio accusamus, temporibus minima dolorem tempore cupiditate. Molestiae, vel.</p>
+                            <h2 class="project__title"><span class="project__num">4</span> Tnk Store</h2>
+                            <p class="project__discreption">A personal e-commerce full stack ecommerce project for presentation purposes only.
+                                Built on top of Reactjs, Nodejs and Mongodb.
+                            </p>
                         </div>
                         <div class="project__botton">
                             <a href="http://tnkstorev2.us-east-1.elasticbeanstalk.com/" target="_blank">view</a>
@@ -90,11 +115,44 @@
                 </div>
             </div>
         </article>
-        <article id="about">
-            <h3>About me</h3>
-            <p></p>
+        <article id="about" class="bootstrap container">
+            <div class="card shadow align-self-center mx-2 mx-lg-auto" style="max-width: 65rem; margin: auto">
+                <div class="card-body p-md-5 p-4">
+                    <h4 class="card-title text-center text-secondary mb-3">About me</h3>
+                    <p class="card-text text-secondary px-md-5 px-3 display-4">My name is Tarek and I'm a full stack JavaScript developer drawing on a photography background to design modern UIs and scalable API’s that enhance business capabilities. 
+                        Independently developed and deployed multiple full stack applications on top of JavaScript and SQL/noSQL. Principle driven and dependable. 
+                        Fluent in English and Arabic.
+                    </p>
+                </div>
+            </div>
+        </article>
+        <article id='resume' class="bootstrap">
+            <div class="card shadow-lg border-0 mx-3 mx-sm-auto mb-5" style="max-width: 35rem; margin: auto">
+                <div class="card-body text-muted text-center py-5">
+                    <h4 class="card-title text-uppercase pb-4">Resume</h4>
+                    <div class="card-text">click below below to view resume</div>
+                    <a href="https://docs.google.com/document/d/11JSqPpmAsYFISE3iI6RpZAlmi3KLSnuob3wfLR62P3E/edit?usp=sharing" target="_blank" class="card-link">view resume</a>
+                </div>
+            </div>
+        </article>
+        <article id='connect' class='bootstrap'>
+            <div class="row-12 bg-dark py-4">
+                <h4 class="col-12 text-center text-light">Connect</h4>
+                <div class="col-12 text-center " >
+                    <a href="#" class="btn" style="color: white"><i class="fab fa-facebook fa-3x" ></i></a>
+                    <a href="https://www.linkedin.com/in/tarekdemachkie/" target="_blank" class="btn"><i class="fab fa-linkedin fa-3x"></i></a>
+                    <a href="https://github.com/tito300" target="_blank" class="btn"><i class="fab fa-github fa-3x"></i></a>
+                </div>
+            </div>
         </article>
     </section>
+    <div class="bootstrap">
+        <footer class="footer pt-5">
+            <div class="container-fluid">
+                <p class="text-muted text-center">create by Tarek Demachkie, © 2019</p>
+            </div>
+        </footer>
+    </div>
     <script src="public/scripts/index.bundle.js" type="module"></script>
 </body>
 </html>

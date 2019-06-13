@@ -6,7 +6,8 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 * {
-  color: #252525;
+  color: #3b3b3b;
+  font-family: Helvetica, Arial, Sans-serif !important;
 }
 
 html {
@@ -14,6 +15,17 @@ html {
   /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
+}
+
+article {
+  margin-bottom: 80px;
+}
+
+code {
+  background-color: rgba(203, 197, 206, 0.322);
+  padding: 2px;
+  color: grey;
+  letter-spacing: 1px;
 }
 
 /* Sections
@@ -341,9 +353,9 @@ template {
   display: none;
 }
 
-.project__botton, .project__discreption, .project__title {
+#about, .project__botton, .project__discreption, .project__title {
   font-family: Helvetica, Arial, Sans-serif;
-  color: #4b4b4b;
+  color: #737373;
 }
 
 #header {
@@ -355,7 +367,7 @@ template {
   width: 100%;
   overflow: hidden;
   background-color: #f2f8ff;
-  background: linear-gradient(white 30%, #d0dbf9);
+  background: linear-gradient(-173deg, white 55%, #9ca6b7);
 }
 #header .header__top {
   font-family: Helvetica, Arial, sans-serif;
@@ -537,7 +549,7 @@ template {
   opacity: 0.35;
   transform: skewY(-30deg);
   background: rgba(223, 244, 255, 0.89);
-  background: linear-gradient(to top, rgba(224, 231, 255, 0.993) 5%, rgba(238, 249, 255, 0.945) 70%);
+  background: linear-gradient(-40deg, rgba(184, 191, 204, 0.86) 5%, rgba(240, 250, 255, 0.945) 70%);
 }
 #header .shapes span:nth-of-type(3)::after {
   content: "";
@@ -747,7 +759,7 @@ template {
     opacity: 0.35;
     transform: skewY(-30deg);
     background: rgba(223, 244, 255, 0.89);
-    background: linear-gradient(to top, rgba(224, 231, 255, 0.993) 5%, rgba(238, 249, 255, 0.945) 70%);
+    background: linear-gradient(to top, rgba(195, 206, 245, 0.92) 5%, rgba(227, 225, 255, 0.85) 70%);
   }
   #header .shapes span:nth-of-type(3)::after {
     content: "";
@@ -767,11 +779,13 @@ template {
   width: 100%;
   padding: 20px 30px;
   transition: 0.4s ease-in;
+  margin-bottom: 100px;
 }
 
 .projects__header {
   text-align: center;
   font-family: Helvetica, Arial;
+  font-weight: bold;
   letter-spacing: 2px;
   color: #4b4b4b;
   position: relative;
@@ -783,7 +797,8 @@ template {
   width: fit-content;
   border-radius: 3px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-  opacity: 0.3;
+  transform: translateY(-50px);
+  transition: 0.3s linear;
 }
 
 .projects__container {
@@ -805,14 +820,14 @@ template {
   justify-content: center;
   padding: 20px 0;
 }
-.project__wrapper:nth-of-type(2) {
+.project__wrapper:nth-of-type(2), .project__wrapper:nth-of-type(4) {
   flex-direction: row-reverse;
 }
-.project__wrapper:nth-of-type(2) .project__text-section:before {
+.project__wrapper:nth-of-type(2) .project__text-section:before, .project__wrapper:nth-of-type(4) .project__text-section:before {
   left: -70%;
 }
 @media all and (min-width: 720px) {
-  .project__wrapper:nth-of-type(2) .project__img-wrapper {
+  .project__wrapper:nth-of-type(2) .project__img-wrapper, .project__wrapper:nth-of-type(4) .project__img-wrapper {
     margin-left: 0;
     margin-right: 60px;
   }
@@ -839,10 +854,10 @@ template {
   .project__text-section::before {
     content: "";
     position: absolute;
-    top: -9%;
-    left: -10%;
+    top: -11%;
+    left: -12%;
     width: 175%;
-    height: 120%;
+    height: 130%;
     background-color: #eef4ff;
     background-color: #a5adb31c;
     z-index: -5;
@@ -865,6 +880,7 @@ template {
 .project__title {
   position: relative;
   padding-left: 10px;
+  font-weight: bold;
 }
 .project__title .project__num {
   color: rgba(0, 0, 0, 0.09);
@@ -882,7 +898,7 @@ template {
   border-radius: 5px;
   font-weight: 600;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 1px -2px rgba(0, 0, 0, 0.007), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-  transition: 130ms linear;
+  transition: 100ms linear;
 }
 .project__botton a.private {
   background-color: #a1a1a1;
@@ -893,7 +909,7 @@ template {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 .project__botton a:hover {
-  background-color: #666666;
+  background-color: #62839a;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
@@ -917,6 +933,7 @@ template {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 3px;
   transition: 150ms linear;
+  opacity: 0.9;
 }
 .project__img:hover {
   transform: scale(1.05);
@@ -924,8 +941,31 @@ template {
 }
 @media all and (min-width: 720px) {
   .project__img {
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 10px 0 rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 13px 4px rgba(0, 0, 0, 0.07), 0 1px 15px 0 rgba(0, 0, 0, 0.06), 0 2px 19px -1px rgba(0, 0, 0, 0.12);
   }
+}
+
+#about {
+  background-color: #616267;
+  display: flex;
+  padding: 70px 0;
+}
+#about .card {
+  background-color: #efefef;
+  border: none;
+}
+#about .card-text {
+  font-size: 1.1rem;
+  color: #818181 !important;
+}
+
+#resume {
+  padding-top: 100px;
+  margin-bottom: 200px;
+}
+
+#connect path {
+  color: white !important;
 }
 
 /*# sourceMappingURL=index.css.map */
