@@ -373,11 +373,16 @@ template {
   background-color: #f2f8ff;
   background: linear-gradient(-173deg, white 55%, #9ca6b7);
 }
+@media all and (max-width: 800px) {
+  #header {
+    height: auto;
+  }
+}
 #header .header__top {
   font-family: Helvetica, Arial, sans-serif;
   text-align: center;
   margin-bottom: 60px;
-  margin-top: 0px;
+  margin-top: 35px;
   z-index: 5;
 }
 @media all and (min-width: 700px) {
@@ -774,6 +779,90 @@ template {
     background: linear-gradient(to bottom, white 1%, rgba(133, 133, 133, 0.856));
   }
 }
+#recommendations {
+  width: 100%;
+  margin-bottom: -150px;
+  z-index: 150;
+}
+@media all and (max-width: 800px) {
+  #recommendations {
+    margin-bottom: 50px;
+  }
+}
+#recommendations .recom {
+  padding: 0px 30px;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+@media all and (max-width: 800px) {
+  #recommendations .recom {
+    padding: 0px 34px;
+  }
+}
+#recommendations .recom__title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 200;
+  color: rgba(0, 0, 0, 0.363);
+  text-transform: uppercase;
+}
+#recommendations .recom__text-cont {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+#recommendations .recom__text {
+  position: relative;
+  max-width: 400px;
+  min-width: 300px;
+  font-family: sans-serif, Arial, Helvetica !important;
+  color: #4e6574b0;
+  font-weight: 200;
+  font-size: 17px;
+  line-height: 1.4;
+  transition: 0.3 ease-in;
+}
+#recommendations .recom__text::before {
+  position: absolute;
+  content: open-quote;
+  font-size: 60px;
+  top: -19px;
+  left: -24px;
+  color: #64869e;
+}
+#recommendations .recom__text::after {
+  position: absolute;
+  content: close-quote;
+  font-size: 24px;
+  font-size: 60px;
+  bottom: -48px;
+  color: #64869e;
+  padding-left: 8px;
+}
+@media all and (max-width: 800px) {
+  #recommendations .recom__text {
+    margin-bottom: 40px;
+    min-width: unset;
+  }
+}
+#recommendations .recom__auther {
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  font-weight: 600;
+  color: #2034479e;
+  font-size: 16px;
+}
+#recommendations .recom__auther::before {
+  content: "- ";
+}
+@media all and (max-width: 800px) {
+  #recommendations .recom__auther {
+    bottom: -30px;
+  }
+}
+
 #projects {
   box-sizing: border-box;
   min-height: 100vh;

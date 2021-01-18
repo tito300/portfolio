@@ -14,7 +14,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch",
-    "scss": "sass --watch src/styles/sass/index.scss public/styles/index.css"
+    "scss": "sass --watch src/styles/sass/index.scss public/styles/index.css",
+    "dev": "npm run scss && npm start"
   },
   "repository": {
     "type": "git",
